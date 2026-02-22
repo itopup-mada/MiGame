@@ -1,4 +1,10 @@
 {
+  "rewrites": [
+    {
+      "source": "/js/main.js",
+      "destination": "/api/main"
+    }
+  ],
   "headers": [
     {
       "source": "/api/main",
@@ -6,6 +12,10 @@
         {
           "key": "Content-Type",
           "value": "application/javascript"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0"
         }
       ]
     }
