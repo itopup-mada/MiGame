@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/js/main.js",
+      "destination": "/api/main"
+    }
+  ]
+}
