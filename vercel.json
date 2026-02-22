@@ -1,8 +1,13 @@
 {
-  "rewrites": [
+  "headers": [
     {
-      "source": "/js/main.js",
-      "destination": "/api/main"
+      "source": "/api/main",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/javascript"
+        }
+      ]
     }
   ]
 }
