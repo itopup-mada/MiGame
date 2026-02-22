@@ -281,5 +281,18 @@
     </div>
   </div>
 
+  <script>
+  // Ity no haka ny code JS avy ao amin'ny API-nao
+  fetch('/api/main')
+    .then(response => response.text())
+    .then(jsCode => {
+      const scriptElement = document.createElement('script');
+      scriptElement.textContent = jsCode;
+      document.body.appendChild(scriptElement);
+    })
+    .catch(err => console.error("Tsy azo ilay JavaScript:", err));
+  </script>
+  
+
 </body>
   </html>
