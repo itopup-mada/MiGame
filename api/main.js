@@ -1,5 +1,6 @@
 export default function handler(req, res) {
   const code = `
+    
     const games = [
       { id: 1, title: "Grand Theft Auto: San Andreas", image: "Gta_San_Andreas.jpg", category: ["Action", "Aventure", "Open World"], size: "2.4 GB", downloads: "500K+", rating: 4.9, downloadLink: "#", featured: true },
       { id: 2, title: "Grand Theft Auto: Vice City", image: "Gta_Vice_City.png", category: ["Action", "Open World"], size: "1.4 GB", downloads: "450K+", rating: 4.8, downloadLink: "#", featured: true },
@@ -185,8 +186,9 @@ export default function handler(req, res) {
     document.addEventListener('DOMContentLoaded', () => {
       window.displayGames();
     });
-  `;
+      \`;
 
   res.setHeader('Content-Type', 'application/javascript');
+  res.setHeader('Cache-Control', 'no-store');
   res.status(200).send(code);
 }
