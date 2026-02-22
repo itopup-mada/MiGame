@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiGame Pro - Téléchargement Jeux Android</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="theme-color" content="rgba(10, 10, 15, 0.95)">
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+  <!-- Navigation Pro -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <div class="logo-icon">
+          <i class="fas fa-gamepad"></i>
+        </div>
+        <span class="logo-text">MiGame</span>
+      </div>
+      
+      <div class="nav-links" id="navLinks">
+        <a href="#">Accueil</a>
+        <a href="#">Jeux</a>
+        <a href="#">Catégories</a>
+        <a href="#">À propos</a>
+        <a href="#">Contact</a>
+        <a href="#">Blog</a>
+      </div>
+      <div class="user-menu">
+        <div class="notification-bell">
+          <i class="far fa-bell"></i>
+          <span class="notification-badge">3</span>
+        </div>
+        <div class="avatar">MG</div>
+      </div>
+      
+      <!-- Menu Hamburger Icon -->
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section Pro -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1>Téléchargez vos jeux Android préférés en version Pro</h1>
+        <p>Découvrez la plus grande collection de jeux Android premium à Madagascar. Téléchargement ultra-rapide, 100% sécurisé et gratuit.</p>
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="number" id="totalGames">10+</div>
+            <div class="label">Jeux Pro</div>
+          </div>
+          <div class="stat-card">
+            <div class="number">1M+</div>
+            <div class="label">Téléchargements</div>
+          </div>
+          <div class="stat-card">
+            <div class="number">4.9</div>
+            <div class="label">Note Pro</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1612178537253-bccd437b730e?w=500&auto=format&fit=crop" alt="Gaming">
+        <div class="floating-card">
+          <i class="fas fa-download"></i>
+          <div>
+            <span>10k+</span>
+            <small>Téléchargements aujourd'hui</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Pro -->
+  <main class="main-content">
+    <!-- Filters Section Pro -->
+    <div class="filters-section">
+      <div class="filters-header">
+        <h3>
+          <i class="fas fa-filter"></i>
+          Filtres avancés
+        </h3>
+        <button class="reset-btn" onclick="resetFilters()">
+          <i class="fas fa-redo-alt"></i>
+          Réinitialiser
+        </button>
+      </div>
+            
+      <div class="search-bar">
+        <div class="search-input">
+          <i class="fas fa-search"></i>
+          <input type="text" id="searchInput" placeholder="Rechercher parmi +100 jeux...">
+        </div>
+      </div>
+
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-tab active" data-filter="all">Tous les jeux</button>
+        <button class="filter-tab" data-filter="Action">Action</button>
+        <button class="filter-tab" data-filter="Aventure">Aventure</button>
+        <button class="filter-tab" data-filter="Sport">Sport</button>
+        <button class="filter-tab" data-filter="Course">Course</button>
+        <button class="filter-tab" data-filter="Combat">Combat</button>
+        <button class="filter-tab" data-filter="FPS">FPS</button>
+        <button class="filter-tab" data-filter="Horreur">Horreur</button>
+        <button class="filter-tab" data-filter="Anime">Anime</button>
+      </div>
+    </div>
+
+    <!-- Games Header Pro -->
+    <div class="games-header">
+      <h2>
+        <i class="fas fa-download"></i>
+        Jeux populaires
+      </h2>
+      <div class="view-options">
+        <span class="view-option active" onclick="changeView('grid')">
+          <i class="fas fa-th-large"></i>
+        </span>
+        <span class="view-option" onclick="changeView('list')">
+          <i class="fas fa-list"></i>
+        </span>
+      </div>
+    </div>
+
+    <!-- Games Grid Pro -->
+    <div class="games-grid" id="gamesGrid">
+      <div class="loading">
+        <div class="loading-spinner"></div>
+        <p>Chargement des jeux pro...</p>
+      </div>
+    </div>
+
+    <!-- Featured Section Pro -->
+    <div class="featured-section">
+      <div class="section-header">
+        <h2>
+          <i class="fas fa-star"></i>
+          Jeux en vedette
+        </h2>
+        <a href="#">Voir tout <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="featured-grid">
+        <div class="featured-card">
+          <div class="featured-icon">
+            <i class="fas fa-crown"></i>
+          </div>
+          <h3>Jeux du mois</h3>
+          <p>Les jeux les plus téléchargés de ce mois-ci avec des exclusivités</p>
+          <div class="featured-stats">
+            <span><i class="fas fa-download"></i> 50k+</span>
+            <span><i class="fas fa-star"></i> 4.9</span>
+          </div>
+        </div>
+        <div class="featured-card">
+          <div class="featured-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3>Nouveautés</h3>
+            <p>Découvrez les derniers jeux ajoutés cette semaine</p>
+          <div class="featured-stats">
+            <span><i class="fas fa-clock"></i> 15 jeux</span>
+            <span><i class="fas fa-star"></i> Nouveau</span>
+          </div>
+        </div>
+        <div class="featured-card">
+          <div class="featured-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <h3>Top downloads</h3>
+          <p>Les jeux les plus populaires de tous les temps</p>
+          <div class="featured-stats">
+            <span><i class="fas fa-download"></i> 1M+</span>
+            <span><i class="fas fa-star"></i> 4.8</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter Pro -->
+    <section class="newsletter">
+      <h2>Restez connecté</h2>
+      <p>Inscrivez-vous à la newsletter Pro pour recevoir les exclusivités et les jeux en avant-première</p>
+      <form class="newsletter-form" onsubmit="event.preventDefault(); newsletterSubscribe()">
+        <input type="email" placeholder="Votre adresse email professionnelle" required>
+        <button type="submit">S'abonner Pro</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer Pro -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>MiGame Pro</h4>
+        <p>La plateforme #1 de téléchargement de jeux Android à Madagascar. Plus de 1 million de téléchargements et des milliers d'utilisateurs satisfaits.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-discord"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Liens rapides</h4>
+        <ul>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Accueil</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Jeux populaires</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Nouveautés</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Catégories</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Top downloads</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Contact Pro</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Conditions d'utilisation</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Confidentialité</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Signalement</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Pro</h4>
+        <div class="contact-info">
+          <div>
+            <i class="fas fa-map-marker-alt"></i>
+            Antananarivo, Madagascar
+          </div>
+          <div>
+            <i class="fas fa-phone"></i>
+            +261 37 46 030 59
+          </div>
+          <div>
+            <i class="fas fa-envelope"></i>
+            contact@migame.pro
+          </div>
+          <div>
+            <i class="fas fa-clock"></i>
+            Lun-Ven: 8h - 18h
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 MiGame Pro. Tous droits réservés. Version 2.0</p>
+      <div class="footer-bottom-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Cookies</a>
+        <a href="#">Accessibilité</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Download Modal Pro -->
+  <div class="modal" id="downloadModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <div class="modal-icon">
+        <i class="fas fa-download"></i>
+      </div>
+      <h2 id="modalGameTitle">Téléchargement Pro</h2>
+      <p id="modalGameDescription">Votre téléchargement premium va commencer. Profitez de la vitesse maximale !</p>
+      <div class="modal-buttons">
+        <a href="#" class="modal-btn modal-btn-primary" id="downloadLink">
+          <i class="fas fa-bolt"></i> Télécharger maintenant
+        </a>
+        <button class="modal-btn modal-btn-secondary" onclick="closeModal()">
+          <i class="fas fa-times"></i> Annuler
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+
+</body>
+  </html>
