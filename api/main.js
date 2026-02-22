@@ -186,7 +186,7 @@ export default function handler(req, res) {
     document.addEventListener('DOMContentLoaded', () => {
       window.displayGames();
     });
-      \`;
+   `;
 
   res.setHeader('Content-Type', 'application/javascript');
   res.setHeader('Cache-Control', 'no-store');
